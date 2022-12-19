@@ -1,0 +1,33 @@
+{
+  "name": "aos-c1-assembly-script",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node tests",
+    "asbuild:debug": "asc assembly/index.ts --target debug",
+    "asbuild:release": "asc assembly/index.ts --target release",
+    "asbuild": "npm run asbuild:debug && npm run asbuild:release",
+    "start": "npx serve .",
+    "build:wasi": "asc assembly/index.ts -b build/index.wasm -t build/index.wat"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "assemblyscript": "^0.25.1"
+  },
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./build/release.js",
+      "types": "./build/release.d.ts"
+    }
+  },
+  "dependencies": {
+    "as-bignum": "^0.2.23",
+    "as-wasi": "^0.5.1",
+    "assemblyscript-json": "^1.1.0",
+    "json-as": "^0.5.11",
+    "visitor-as": "^0.11.4"
+  }
+}

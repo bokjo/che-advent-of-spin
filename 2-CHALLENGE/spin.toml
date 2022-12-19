@@ -1,0 +1,33 @@
+spin_version = "1"
+authors = ["Bojanche Stojchevski <bojanche@propel.us>"]
+description = "aos-c2-ts-lowercase"
+name = "aos-c2-ts-lowercase"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "aos-c2-ts-lowercase"
+source = "./aos-c2-ts-lowercase/target/spin-http-js.wasm"
+allowed_http_hosts = ["insecure:allow-all"]
+[component.trigger]
+route = "/lowercase"
+[component.build]
+command = "npm run build"
+
+[[component]]
+id = "aos-c2-ts-hello"
+source = "./aos-c2-ts-hello/target/spin-http-js.wasm"
+allowed_http_hosts = ["insecure:allow-all"]
+[component.trigger]
+route = "/hello/..."
+[component.build]
+command = "npm run build"
+
+# [[component]]
+# id = "aos-c2-rust-hello"
+# source = "./aos-c2-rust-hello/target/wasm32-wasi/release/aos_c2_rust_hello.wasm"
+# allowed_http_hosts = ["insecure:allow-all"]
+# [component.trigger]
+# route = "/hello/..."
+# [component.build]
+# command = "cargo build --target wasm32-wasi --release"

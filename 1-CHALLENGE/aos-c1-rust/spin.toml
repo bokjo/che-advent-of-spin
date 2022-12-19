@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Bojanche Stojchevski"]
+description = "advent of spin c1 rust"
+name = "aos-c1-rust"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "aos-c1-rust"
+source = "target/wasm32-wasi/release/aos_c1_rust.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "cargo build --target wasm32-wasi --release"

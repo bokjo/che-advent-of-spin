@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Bojanche Stojchevski"]
+description = "advent of spin c1 assembly-script"
+name = "aos-c1-assembly-script"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "aos-c1-assembly-script"
+source = "./build/release.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "npm run asbuild"
