@@ -1,0 +1,14 @@
+spin_version = "1"
+authors = ["Bojanche Stojchevski <bojanche@propel.us>"]
+description = ""
+name = "aos-c4-ts"
+trigger = { type = "http", base = "/distance-latlong" }
+version = "0.1.0"
+
+[[component]]
+id = "aos-c4-ts"
+source = "target/spin-http-js.wasm"
+[component.trigger]
+route = "/..."
+[component.build]
+command = "npm run build"

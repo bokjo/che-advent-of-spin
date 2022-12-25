@@ -40,8 +40,8 @@ export const handleRequest: HandleRequest = async function (
         body: JSON.stringify({ value }),
         // redirect: "follow",
       });
+
       const lowercaseValue = (await resp.json()) as LowercaseResponse;
-      console.log("lowercaseValue: ", lowercaseValue);
       value = lowercaseValue.message;
     } catch (error) {
       console.error(error);
