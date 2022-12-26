@@ -1,0 +1,17 @@
+spin_version = "1"
+authors = ["Bojanche Stojchevski <bojanche@propel.us>"]
+description = "aos-ts-6-slack-bot"
+name = "aos-ts-6-slack-bot"
+trigger = { type = "http", base = "/" }
+version = "0.1.0"
+
+[[component]]
+id = "aos-ts-6-slack-bot"
+source = "target/spin-http-js.wasm"
+allowed_http_hosts = ["insecure:allow-all"]
+
+[component.trigger]
+route = "/..."
+
+[component.build]
+command = "npm run build"
